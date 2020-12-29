@@ -1,6 +1,6 @@
 import { handleActions, Action } from 'redux-actions'
 import * as UserActions from './actions'
-import { userState, Actions } from './type'
+import { userState, Actions } from './types'
 
 export type State = {
   readonly isSignedIn: boolean

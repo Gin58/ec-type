@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions'
-import { userState } from './type'
+import { userState } from './types'
 
 export const Actions = {
   SIGN_IN: 'SIGN_IN',
