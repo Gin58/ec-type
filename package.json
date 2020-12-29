@@ -80,7 +80,9 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^4.3.6",
     "lint-staged": "^10.5.3",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "typescript-fsa": "^3.0.0",
+    "typescript-fsa-reducers": "^1.2.2"
   },
   "husky": {
     "hooks": {
@@ -88,6 +90,7 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": "eslint --max-warnings=0 --ext .tsx --ext .ts --fix"
-  }
+    "*.{ts,tsx}": "eslint --fix"
+  },
+  "//": "eslint --max-warnings=0 --ext .tsx --ext .ts --fix"
 }
