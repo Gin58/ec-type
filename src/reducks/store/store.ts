@@ -9,7 +9,7 @@ import { usersReducer, State as UserState } from '../users/reducers'
 
 export interface RootState {
   router: RouterState
-  usersReducer: UserState
+  users: UserState
 }
 
 export const history: any = History.createBrowserHistory()
@@ -17,7 +17,7 @@ export const routerMiddleware = createRouterMiddleware(history)
 
 export const rootReducer = combineReducers<RootState>({
   router: connectRouter(history),
-  usersReducer,
+  users: usersReducer,
 })
 
 export function configureStore(initialState?: RootState) {

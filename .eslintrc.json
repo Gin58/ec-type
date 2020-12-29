@@ -78,7 +78,8 @@
     // ちょっとよくわからないので一旦消す
     "no-shadow": 0,
     "react/jsx-curly-newline": 0,
-    "import/no-cycle": 0
+    "import/no-cycle": 0,
+    "import/prefer-default-export": 0
   },
   "overrides": [
     {

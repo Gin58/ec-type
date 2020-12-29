@@ -1,4 +1,4 @@
-import { initialState as initialStateType } from './type'
+import { initialState as initialStateType } from './types'
 
 const initialState: initialStateType = {
   users: {

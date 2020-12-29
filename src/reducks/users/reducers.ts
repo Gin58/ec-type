@@ -1,6 +1,6 @@
 import { handleActions, Action } from 'redux-actions'
 import * as UserActions from './actions'
-import { userState, Actions } from './type'
+import { userState } from './types'
 
 export type State = {
   readonly isSignedIn: boolean
@@ -25,7 +25,7 @@ export const usersReducer = handleActions<State, userState>(
         ...action.payload,
       }
     },
-    [Actions.SIGN_OUT]: (state: State) => {
+    [UserActions.Actions.SIGN_OUT]: (state: State) => {
       return {
         ...state,
         ...initialState,
