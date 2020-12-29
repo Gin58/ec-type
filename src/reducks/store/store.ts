@@ -4,6 +4,7 @@ import {
   routerMiddleware as createRouterMiddleware,
   RouterState,
 } from 'connected-react-router'
+import thunk from 'redux-thunk'
 import * as History from 'history'
 import { usersReducer, State as UserState } from '../users/reducers'
 
@@ -21,7 +22,7 @@ export const rootReducer = combineReducers<RootState>({
 })
 
 export function configureStore(initialState?: RootState) {
-  const middlewares = [routerMiddleware]
+  const middlewares = [routerMiddleware, thunk]
   const enhancer = compose(applyMiddleware(...middlewares))
   return createStore(rootReducer, initialState!, enhancer)
 }
