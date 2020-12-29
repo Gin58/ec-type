@@ -15,7 +15,7 @@
     "@types/react-dom": "^16.9.8",
     "connected-react-router": "^6.8.0",
     "firebase": "^8.2.1",
-    "history": "^5.0.0",
+    "history": "4.10.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
@@ -60,6 +60,7 @@
   "devDependencies": {
     "@types/eslint": "^7.2.6",
     "@types/eslint-plugin-prettier": "^3.1.0",
+    "@types/history": "4.7.8",
     "@types/prettier": "^2.1.6",
     "@types/react-redux": "^7.1.14",
     "@types/react-router": "^5.1.9",
