@@ -2,11 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import { Provider } from 'react-redux'
-import createStore from './reducks/store/store'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import { configureStore } from './reducks/store/store'
 
-const store = createStore()
+const store = configureStore()
 
 ReactDOM.render(
   <React.StrictMode>

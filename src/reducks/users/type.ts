@@ -8,3 +8,9 @@ export type userState = {
   uid: string
   username: string
 }
+
+export interface UserModel {
+  isSignedIn: boolean
+  uid: string
+  username: string
+}

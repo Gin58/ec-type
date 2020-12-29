@@ -27,7 +27,7 @@ const App: React.FC = () => {
           onClick={() =>
             dispatch(
               signInAction({
-                isSignedIn: false,
+                isSignedIn: true,
                 uid: '0001',
                 username: 'warota',
               })

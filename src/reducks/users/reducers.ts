@@ -1,24 +1,36 @@
+import { handleActions, Action } from 'redux-actions'
 import * as UserActions from './actions'
-import initialState from '../store/initialState'
 import { userState, Actions } from './type'
 
-type ActionType =
-  | ReturnType<typeof UserActions.signInAction>
-  | ReturnType<typeof UserActions.signOutAction>
+export type State = {
+  readonly isSignedIn: boolean
+  readonly uid: string
+  readonly username: string
+}
 
-const UsersReducer = (
-  state: userState = initialState.users,
-  action: ActionType
-) => {
-  switch (action.type) {
-    case Actions.SIGN_IN:
+const initialState: State = {
+  isSignedIn: false,
+  uid: '',
+  username: '',
+}
+
+export const usersReducer = handleActions<State, userState>(
+  {
+    [UserActions.Actions.SIGN_IN]: (
+      state: State,
+      action: Action<userState>
+    ) => {
       return {
         ...state,
         ...action.payload,
       }
-    default:
-      return state
-  }
-}
-
-export default UsersReducer
+    },
+    [Actions.SIGN_OUT]: (state: State) => {
+      return {
+        ...state,
+        ...initialState,
+      }
+    },
+  },
+  initialState
+)
