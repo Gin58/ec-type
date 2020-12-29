@@ -1,83 +1,87 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  // 参考
+  // https://qiita.com/madono/items/a134e904e891c5cb1d20
+  // https://qiita.com/Captain_Blue/items/5d6969643148174e70b3
+  //   https://qiita.com/jonakp/items/7d9f47c613c16cbf95aa
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "airbnb/hooks",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/eslint-recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "airbnb",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:prettier/recommended",
-        "airbnb/hooks",
-        "plugin:import/errors",
-        "plugin:import/warnings",
-        "plugin:import/typescript",
-        "plugin:@typescript-eslint/eslint-recommended"
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "project": "./tsconfig.eslint.json", // プロジェクトに対するコンパイル設定ファイルのパス
+    "tsconfigRootDir": "."
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "import",
+    "jsx-a11y",
+    "react",
+    "react-hooks"
+  ],
+  "root": true,
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "rules": {
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    // should be rewritten as `['error', { allowAsStatement: true }]` in ESLint 7 or later
+    // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/1184
+    "no-void": ["error", { "allowAsStatement": true }],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "argsIgnorePattern": "_",
+        "ignoreRestSiblings": false,
+        "varsIgnorePattern": "_"
+      }
     ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2020,
-        "sourceType": "module",
-        "project": "./tsconfig.eslint.json", // プロジェクトに対するコンパイル設定ファイルのパス
-        "tsconfigRootDir": "."
-    },
-    "plugins": [
-        "@typescript-eslint",
-        "import",
-        "jsx-a11y",
-        "react",
-        "react-hooks"
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
     ],
-    "root": true,
-    "settings": {
-        "import/resolver": {
-            "node": {
-                "extensions": [".js", ".jsx", ".ts", ".tsx"]
-            }
-        }
-    },
-    "rules": {
-        "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": ["error"],
-        // should be rewritten as `['error', { allowAsStatement: true }]` in ESLint 7 or later
-        // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/1184
-        "no-void": ["error", { "allowAsStatement": true }],
-        "@typescript-eslint/no-unused-vars": [
-            "error",
-            {
-            "vars": "all",
-            "args": "after-used",
-            "argsIgnorePattern": "_",
-            "ignoreRestSiblings": false,
-            "varsIgnorePattern": "_"
-            }
-        ],
-        "import/extensions": [
-            "error",
-            "ignorePackages",
-            {
-            "js": "never",
-            "jsx": "never",
-            "ts": "never",
-            "tsx": "never"
-            }
-        ],
-        "react/jsx-filename-extension": [
-            "error",
-            {
-            "extensions": [".jsx", ".tsx"]
-            }
-        ]
-    },
-    "overrides": [
-        {
-            "files": ["*.tsx"],
-            "rules": {
-            "react/prop-types": "off"
-            }
-        }
-     ]
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".jsx", ".tsx"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "react/prop-types": "off"
+      }
+    }
+  ]
 }
