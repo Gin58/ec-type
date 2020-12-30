@@ -13,7 +13,7 @@ export interface RootState {
   users: UserState
 }
 
-export const history: any = History.createBrowserHistory()
+export const history: History.History = History.createBrowserHistory()
 export const routerMiddleware = createRouterMiddleware(history)
 
 export const rootReducer = combineReducers<RootState>({
